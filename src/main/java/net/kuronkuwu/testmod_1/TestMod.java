@@ -1,9 +1,11 @@
 package net.kuronkuwu.testmod_1;
 
+import net.kuronkuwu.testmod_1.item.ModItems;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -27,12 +29,16 @@ public class TestMod
     private static final Logger LOGGER = LogManager.getLogger();
 
     public TestMod() {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        // Register the enqueueIMC method for modloading
+        IEventBus eventbus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(eventbus);
+
+        eventbus.addListener(this::setup);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
+
 
     private void setup(final FMLCommonSetupEvent event)
     {
