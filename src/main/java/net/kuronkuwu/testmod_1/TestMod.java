@@ -1,5 +1,6 @@
 package net.kuronkuwu.testmod_1;
 
+import net.kuronkuwu.testmod_1.block.ModBlocks;
 import net.kuronkuwu.testmod_1.item.ModItems;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -32,6 +33,7 @@ public class TestMod
         IEventBus eventbus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventbus);
+        ModBlocks.register(eventbus);
 
         eventbus.addListener(this::setup);
 

@@ -1,0 +1,11 @@
+{
+  "item.testmod_1.titanium_ingot": "Titanium Ingot",
+  "item.testmod_1.titanium_nugget": "Titanium Nugget",
+  "item.testmod_1.raw_titanium": "Raw Titanium",
+
+  "block.testmod_1.titanium_block": "Block of Titanium",
+  "block.testmod_1.titanium_ore": "Titanium Ore",
+
+  "itemGroup.testModTab": "TestMod Tab"
+
+}
